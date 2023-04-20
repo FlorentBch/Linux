@@ -332,3 +332,50 @@ dans le repertoire /home/u2
     sudo groupdel etudiant
     sudo groupdel formateur
     ```
+
+## PARTIE 2 : Filtrer le contenu des fichiers
+
+1. Filtrer le fichier /etc/passwd pour obtenir uniquement l’utilisateur root et l’utilisateur principal
+(Premier utilisateur créé)et rediriger la sortie dans un fichier nommé passwd_dep.
+
+    ```bash
+    sudo grep -e 'fbuchet' /etc/passwd > passwd_dep
+    sudo grep -e 'root' /etc/passwd >> passwd_dep
+    ```
+
+2. Trouver le nombre de lignes que contient le fichier /etc/passwd et mettre la réponse à la fin du fichier
+fraîchement créé.
+
+    ```bash
+    sudo wc -l /etc/passwd >> passwd_dep
+    nano passwd_dep
+    ```
+
+3. Filtrer le fichier /etc/shadow pour obtenir uniquement l’utilisateur root et l’utilisateur principal et
+rediriger la sortie dans un fichier nommé shadow_dep.
+
+    ```bash
+    sudo grep -E "fbuchet" /etc/shadow >> shadow_dep
+    sudo grep -E "root" /etc/shadow >> shadow_rep
+    ```
+
+4. Trouver le nombre de lignes que contient le fichier /etc/shadow et mettre la réponse à la fin du fichier
+fraîchement créé.
+
+    ```bash
+    sudo wc -l /etc/shadow >> shadow_dep
+    ```
+
+5. Filtrer le fichier /etc/group pour obtenir uniquement l’utilisateur root et l’utilisateur principal et rediriger
+la sortie dans un fichier nommé group_dep.
+
+    ```bash
+    sudo grep -E "fbuchet" /etc/group >> group_dep
+    sudo grep -E "root" /etc/group >> group_dep
+    ```
+
+6. Trouver le nombre de lignes que contient le fichier /etc/group et mettre la réponse à la fin du fichier
+fraîchement créé.
+    ```bash
+    sudo wc -l /etc/group >> group_dep
+    ```

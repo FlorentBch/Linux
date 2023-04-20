@@ -223,6 +223,8 @@ f2_dossierB | |--- f3_dossierB | |--- f4_dossierB | |--- dossierC |--- f1_dossie
 
 - Demander un nouveau mot de passe pour un utilisateur dans 5 jours : chage -M 5 utilisateur
 
+- Donner le droit en sudo à un user : sudo usermod -aG sudo u2
+
 ## PARTIE 1 : Manipulation user et group
 
 1. Création de 3 groupes : formateur, etudiant, administration
@@ -310,8 +312,23 @@ dans le repertoire /home/u2
 12. Mettre l'utilisateur u1 en mode sudo
 
     ```bash
-
+    sudo usermod -aG sudo u1
     ```
 
 13. Supprimer les utilisateurs créés
+
+    ```bash
+    sudo userdel -r u1
+    sudo userdel -r u2
+    sudo userdel -r u3
+    sudo userdel -r u4
+    sudo userdel -r u5
+    ```
+
 14. Supprimer les groupes crées
+
+    ```bash
+    sudo groupdel administration
+    sudo groupdel etudiant
+    sudo groupdel formateur
+    ```

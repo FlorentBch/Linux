@@ -376,6 +376,7 @@ la sortie dans un fichier nommé group_dep.
 
 6. Trouver le nombre de lignes que contient le fichier /etc/group et mettre la réponse à la fin du fichier
 fraîchement créé.
+
     ```bash
     sudo wc -l /etc/group >> group_dep
     ```

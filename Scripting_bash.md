@@ -22,7 +22,8 @@ mkdir -p Downloads/{Autre,Image,Music,Video}
 cd /home/fbuchet/Téléchargements/Downloads
 
 # Pas besoin de créer le fichier en amont car on utilise le chevron.
-echo -e "Ceci est le fichier de Téléchargement.\nMerci de respecter l'organisation du répertoire.\nAttention aux virus.\nLe dossier téléchargement est prêt." > ReadMe.txt # -e sert a inserer les \n pour le retour chariot
+echo -e "Ceci est le fichier de Téléchargement.\nMerci de respecter l'organisation du répertoire.\nAttention aux virus.
+\nLe dossier téléchargement est prêt." > ReadMe.txt # -e sert a inserer les \n pour le retour chariot
 
 # On cherche dans le dossier ReadMe.txt les mots Téléchargements
 grep -i "Téléchargement" ReadMe.txt # -i = Insensible à la casse

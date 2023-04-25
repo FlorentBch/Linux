@@ -78,3 +78,65 @@ echo -e "\nEntrez maintenant votre mots de passe, vous avez 10 secondes"
 read -s -t 10 mdp  #Limite le temps à 10 secondes et obstrue la saisie
 echo -e "Login: $login\nMot de passe: $mdp"
 ```
+
+## Case
+
+```bash
+read -p "Choisissez une option : r pour démarrer, s pour arrêter, d pour supprimer, h pour afficher l'aide disponible: " option
+
+case $option in
+    r)
+        echo "Le programme démarre"
+        ;;
+    s)
+        echo "Le programme s'arrête"
+        ;;
+    d)
+        echo "Le programme se supprime"
+        ;;
+    h)
+        echo "Le programme affiche l'aide disponible"
+        ;;
+    *)
+        echo "Cette option n'existe pas"
+        ;;
+esac
+```
+
+## Les boucles en Linux
+
+La différence entre **While** et le **Until** est que le *While* continue tant que la condition est vrai et le *Until* continue jusqu'à ce que la condition soit vrai
+
+### Version boucle While
+
+```bash
+#! /bin/bash
+
+echo "Pour sortir, veuillez renseigner : Je veux sortir !"
+read usrString
+Phrase="Je veux sortir !"
+while [ "$usrString" != "$Phrase" ] #Ne pas oublier les "" pour spécifier que les variables sont des String
+do
+    echo "Mauvaise réponse. Pour sortir, veuillez renseigner : Je veux sortir !"
+    read usrString
+done
+
+echo "Au revoir !"
+```
+
+### Version boucle Until
+
+```bash
+#! /bin/bash
+
+echo "Pour sortir, veuillez renseigner : Je veux sortir !"
+read usrString
+Phrase="Je veux sortir !"
+until [ "$usrString" = "$Phrase" ]  #Ne pas oublier les "" pour spécifier que les variables sont des String
+do
+    echo "Mauvaise réponse. Pour sortir, veuillez renseigner : Je veux sortir !"
+    read usrString
+done
+
+echo "Au revoir !"
+```
